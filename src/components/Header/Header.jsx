@@ -29,15 +29,16 @@ export default function Header() {
 const MainHeader = styled.div`
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  height: 50px;
+  align-items: baseline;
   border-bottom: 1px solid ${COLORS.gray['300']};
-  padding: 0 36px;
+  padding: 12px 32px;
 `;
 
 const Logo = styled.a`
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
 `;
 
 const LogoWrapper = styled.h1`
@@ -52,6 +53,7 @@ const Side = styled.div`
 
 const Nav = styled.nav`
   display: flex;
+  align-items: center;
   gap: 36px;
 `;
 

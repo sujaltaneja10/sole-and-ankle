@@ -1,4 +1,4 @@
-const SHOES = [
+export const SHOES = [
   {
     slug: 'tech-challenge',
     name: 'NikeCourt Tech Challenge 20',
@@ -82,5 +82,3 @@ const SHOES = [
     numOfColors: 1,
   },
 ];
-
-module.exports = SHOES;
