@@ -6,7 +6,7 @@ export default function ShoeGrid() {
   return (
     <Wrapper>
       {SHOES.map((shoe) => (
-        <ShoeCard {...shoe} />
+        <ShoeCard key={shoe.slug} {...shoe} />
       ))}
     </Wrapper>
   );

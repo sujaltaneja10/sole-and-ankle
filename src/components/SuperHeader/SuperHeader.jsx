@@ -5,6 +5,7 @@ import { COLORS, WEIGHTS } from '../../constants';
 
 import UnstyledButton from '../UnstyledButton/UnstyledButton';
 import SearchInput from '../SearchInput/SearchInput';
+import { BREAKPOINTS } from '../../breakpoints';
 
 export default function SuperHeader() {
   return (
@@ -31,6 +32,10 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0 36px;
   gap: 36px;
+
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    display: none;
+  }
 `;
 
 const Message = styled.div`

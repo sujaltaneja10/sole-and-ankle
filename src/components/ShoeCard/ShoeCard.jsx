@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { COLORS, WEIGHTS } from '../../constants';
 
 function moreThan30Days(timestamp) {
-  const thirtyDaysAgo = Date.now() - 1000 * 60 * 60 * 24 * 30; // Timestamp for 30 days ago
-  return timestamp < thirtyDaysAgo; // Check if the given timestamp is older
+  const thirtyDaysAgo = Date.now() - 1000 * 60 * 60 * 24 * 30;
+  return timestamp < thirtyDaysAgo;
 }
 
 export default function ShoeCard({
@@ -16,12 +16,13 @@ export default function ShoeCard({
 }) {
   return (
     <Wrapper>
-      {moreThan30Days(releaseDate) === false && (
+      {salePrice !== null ? (
+        <SaleTag>Sale!</SaleTag>
+      ) : moreThan30Days(releaseDate) === false ? (
         <ReleasedTag>Just released!</ReleasedTag>
-      )}
-      {salePrice !== null && <SaleTag>Sale!</SaleTag>}
+      ) : null}
       <ImageWrapper>
-        <Image src={imageSrc} />
+        <Image src={imageSrc} alt={name} />
       </ImageWrapper>
       <ProductDetails>
         <ProductInfo>
@@ -41,7 +42,8 @@ export default function ShoeCard({
 const Wrapper = styled.article`
   position: relative;
   height: 30%;
-  width: 30%;
+  min-width: 275px;
+  flex: 1;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: ${WEIGHTS.normal};
@@ -64,19 +66,30 @@ const ProductDetails = styled.div`
 
 const ProductInfo = styled.div`
   color: ${COLORS.gray[900]};
+  width: calc(100% - 50px);
+
+  & p:first-of-type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 
   & p:last-of-type {
     color: ${COLORS.gray[500]};
+    width: 100%;
   }
 `;
 
 const ProductPrice = styled.div`
   display: flex;
   flex-direction: column;
+  width: 50px;
 `;
 
 const Price = styled.p`
   font-size: 1rem;
+  text-align: right;
 
   &::before {
     content: '$';
@@ -112,4 +125,6 @@ const ReleasedTag = styled(ContentTag)``;
 
 const SaleTag = styled(ContentTag)`
   background-color: ${COLORS.primary};
+  width: fit-content;
+  padding: 0 20px;
 `;

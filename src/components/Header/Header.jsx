@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { COLORS, WEIGHTS } from '../../constants.js';
 import SuperHeader from '../SuperHeader/SuperHeader';
+import { BREAKPOINTS } from '../../breakpoints.js';
+import { Search, Menu, ShoppingBag } from 'react-feather';
 
 export default function Header() {
   return (
@@ -8,7 +10,7 @@ export default function Header() {
       <SuperHeader />
       <MainHeader>
         <Side>
-          <Logo>
+          <Logo href="/">
             <LogoWrapper>Sole&Ankle</LogoWrapper>
           </Logo>
         </Side>
@@ -20,7 +22,12 @@ export default function Header() {
           <NavLink href="/">Kids</NavLink>
           <NavLink href="/">Collections</NavLink>
         </Nav>
-        <Side />
+        <TabletIcons>
+          <ShoppingBag />
+          <Search />
+          <Menu />
+        </TabletIcons>
+        <RightSide />
       </MainHeader>
     </header>
   );
@@ -30,8 +37,15 @@ const MainHeader = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  width: 100%;
   border-bottom: 1px solid ${COLORS.gray['300']};
   padding: 12px 32px;
+
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    border-top: 10px solid ${COLORS.gray['900']};
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const Logo = styled.a`
@@ -51,10 +65,34 @@ const Side = styled.div`
   flex: 1;
 `;
 
+const RightSide = styled(Side)`
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    display: none;
+  }
+`;
+
+const TabletIcons = styled.nav`
+  display: none;
+
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  @media (max-width: ${BREAKPOINTS.phone}rem) {
+    gap: 24px;
+  }
+`;
+
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 36px;
+
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    display: none;
+  }
 `;
 
 const NavLink = styled.a`

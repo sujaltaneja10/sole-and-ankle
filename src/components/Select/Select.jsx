@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { COLORS, WEIGHTS } from '../../constants';
 import { ChevronDown } from 'react-feather';
+import { BREAKPOINTS } from '../../breakpoints';
 
 export default function Select({ label, children, ...delegated }) {
   return (
@@ -24,6 +25,10 @@ export default function Select({ label, children, ...delegated }) {
 const Wrapper = styled.label`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${BREAKPOINTS.phone}rem) {
+    display: none;
+  }
 `;
 
 const VisibleLabel = styled.span`

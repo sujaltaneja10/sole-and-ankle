@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { COLORS } from '../../constants';
+import { BREAKPOINTS } from '../../breakpoints';
 
 export function Breadcrumbs({ children }) {
   return (

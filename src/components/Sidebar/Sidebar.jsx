@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Breadcrumbs, Crumbs } from '../BreadCrumbs/BreadCrumbs';
 import { COLORS, WEIGHTS } from '../../constants';
+import { BREAKPOINTS } from '../../breakpoints';
 
-const BreadCrumbItems = [
+const SidebarItems = [
   'Lifestyle',
   'Running',
   'Basketball',
@@ -19,13 +20,15 @@ export default function Sidebar() {
   return (
     <Wrapper>
       <Breadcrumbs>
-        <Crumbs href="/">Home</Crumbs>
-        <Crumbs href="/living-room">Sale</Crumbs>
-        <Crumbs href="/couches">Shoes</Crumbs>
+        <Crumbs href="/home">Home</Crumbs>
+        <Crumbs href="/sale">Sale</Crumbs>
+        <Crumbs href="/shoes">Shoes</Crumbs>
       </Breadcrumbs>
       <SidebarIndex>
-        {BreadCrumbItems.map((item, index) => (
-          <Item key={index}>{item}</Item>
+        {SidebarItems.map((item, index) => (
+          <Item key={index}>
+            <ItemLink href={item}>{item}</ItemLink>
+          </Item>
         ))}
       </SidebarIndex>
     </Wrapper>
@@ -39,6 +42,10 @@ const Wrapper = styled.aside`
   font-weight: ${WEIGHTS.normal};
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${BREAKPOINTS.tablet}rem) {
+    display: none;
+  }
 `;
 
 const SidebarIndex = styled.ul`
@@ -55,4 +62,10 @@ const Item = styled.li`
   &:nth-of-type(3) {
     color: ${COLORS.primary};
   }
+`;
+
+const ItemLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
 `;
