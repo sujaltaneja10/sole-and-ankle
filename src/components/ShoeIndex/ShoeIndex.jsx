@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Select from '../Select/Select';
 import ShoeGrid from '../ShoeGrid/ShoeGrid';
 import { BREAKPOINTS } from '../../breakpoints';
 import { Breadcrumbs, Crumbs } from '../BreadCrumbs/BreadCrumbs';
+import Select from '../Select/Select';
 
 export default function ShoeIndex() {
   return (
@@ -16,9 +16,9 @@ export default function ShoeIndex() {
       </BCWrapper>
       <Topbar>
         <Text>Running</Text>
-        <Select label="Sort">
-          <option value="newest-releases">Newest Releases</option>
-          <option value="on-sale">On sale</option>
+        <Select label={'Sort'}>
+          <option value="new-released">New Released!</option>
+          <option value="on-sale">On Sale</option>
         </Select>
       </Topbar>
       <ShoeGrid />
@@ -48,12 +48,12 @@ const BCWrapper = styled.article`
 
 const Topbar = styled.article`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 
 const Text = styled.p`
   font-size: 1.25rem;
+  margin-right: auto;
   font-weight: var(--weight-medium);
   color: var(--color-gray-900);
 `;

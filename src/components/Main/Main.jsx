@@ -5,14 +5,15 @@ import Sidebar from '../Sidebar/Sidebar';
 export default function Main() {
   return (
     <Wrapper>
-      <Sidebar />
       <ShoeIndex />
+      <Sidebar />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.main`
   display: flex;
+  flex-direction: row-reverse;
   align-items: baseline;
   padding: 36px;
 `;

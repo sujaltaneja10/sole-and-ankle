@@ -22,15 +22,58 @@ export default function Header() {
           <NavLink href="/">Collections</NavLink>
         </Nav>
         <TabletIcons>
-          <ShoppingBag />
-          <Search />
-          <Menu />
+          <Icon href="/cart">
+            <BagIcon strokeWidth={1.5} />
+          </Icon>
+          <Icon href="/search">
+            <SearchIcon strokeWidth={1.5} />
+          </Icon>
+          <Icon href="/menu">
+            <MenuIcon strokeWidth={1.5} />
+          </Icon>
         </TabletIcons>
         <RightSide />
       </MainHeader>
     </header>
   );
 }
+
+const Icon = styled.a`
+  text-decoration: none;
+  color: var(--color-gray-900);
+  display: flex;
+  align-items: center;
+`;
+
+const BagIcon = styled(ShoppingBag)`
+  cursor: pointer;
+
+  & svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const SearchIcon = styled(Search)`
+  cursor: pointer;
+
+  & svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const MenuIcon = styled(Menu)`
+  cursor: pointer;
+
+  & svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 const MainHeader = styled.div`
   display: flex;
@@ -52,6 +95,7 @@ const Logo = styled.a`
   color: inherit;
   display: flex;
   align-items: center;
+  width: fit-content;
 `;
 
 const LogoWrapper = styled.h1`
