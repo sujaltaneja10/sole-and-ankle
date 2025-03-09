@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Search } from 'react-feather';
-import { COLORS, WEIGHTS } from '../../constants';
+import { COLORS } from '../../constants';
 
 export default function SearchInput() {
   return (
@@ -13,7 +13,7 @@ export default function SearchInput() {
 
 const Label = styled.label`
   position: relative;
-  border-bottom: 1px solid ${COLORS.white};
+  border-bottom: 1px solid var(--color-white);
   display: flex;
   align-items: baseline;
   padding: 4px;
@@ -26,11 +26,11 @@ const SearchIcon = styled(Search)`
 const Input = styled.input`
   background: inherit;
   border: 0;
-  color: ${COLORS.white};
+  color: var(--color-white);
   padding: 0 4px;
   padding-left: 24px;
   width: 175px;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: var(--weight-normal);
 
   &:focus {
     border: 1px solid white;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLORS, WEIGHTS } from '../../constants';
 
 function moreThan30Days(timestamp) {
   const thirtyDaysAgo = Date.now() - 1000 * 60 * 60 * 24 * 30;
@@ -46,7 +45,7 @@ const Wrapper = styled.article`
   flex: 1;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: var(--weight-normal);
 `;
 
 const ImageWrapper = styled.div`
@@ -65,7 +64,7 @@ const ProductDetails = styled.div`
 `;
 
 const ProductInfo = styled.div`
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   width: calc(100% - 50px);
 
   & p:first-of-type {
@@ -76,7 +75,7 @@ const ProductInfo = styled.div`
   }
 
   & p:last-of-type {
-    color: ${COLORS.gray[500]};
+    color: var(--color-gray-500);
     width: 100%;
   }
 `;
@@ -98,18 +97,18 @@ const Price = styled.p`
 
 const ActualPrice = styled(Price)`
   text-decoration: line-through;
-  color: ${COLORS.gray['700']};
+  color: var(--color-gray-700);
 `;
 
 const SalePrice = styled(Price)`
-  color: ${COLORS.primary};
+  color: var(--color-primary);
 `;
 
 const ContentTag = styled.div`
   width: 118px;
   height: 32px;
-  background-color: ${COLORS.secondary};
-  color: ${COLORS.white};
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   position: absolute;
   right: -4px;
   top: 8px;
@@ -118,13 +117,13 @@ const ContentTag = styled.div`
   align-items: center;
   border-radius: 2px;
   font-size: 14px;
-  font-weight: ${WEIGHTS.normal};
+  font-weight: var(--weight-normal);
 `;
 
 const ReleasedTag = styled(ContentTag)``;
 
 const SaleTag = styled(ContentTag)`
-  background-color: ${COLORS.primary};
+  background-color: var(--color-primary);
   width: fit-content;
   padding: 0 20px;
 `;

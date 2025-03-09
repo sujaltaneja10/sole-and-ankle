@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLORS, WEIGHTS } from '../../constants.js';
 import SuperHeader from '../SuperHeader/SuperHeader';
 import { BREAKPOINTS } from '../../breakpoints.js';
 import { Search, Menu, ShoppingBag } from 'react-feather';
@@ -38,11 +37,11 @@ const MainHeader = styled.div`
   justify-content: space-around;
   align-items: baseline;
   width: 100%;
-  border-bottom: 1px solid ${COLORS.gray['300']};
+  border-bottom: 1px solid var(--color-gray-300);
   padding: 12px 32px;
 
   @media (max-width: ${BREAKPOINTS.tablet}rem) {
-    border-top: 10px solid ${COLORS.gray['900']};
+    border-top: 10px solid var(--color-gray-900);
     justify-content: space-between;
     align-items: center;
   }
@@ -57,8 +56,8 @@ const Logo = styled.a`
 
 const LogoWrapper = styled.h1`
   font-size: 1.2rem;
-  color: ${COLORS.gray['900']};
-  font-weight: ${WEIGHTS.bold};
+  color: var(--color-gray-900);
+  font-weight: var(--weight-bold);
 `;
 
 const Side = styled.div`
@@ -97,12 +96,12 @@ const Nav = styled.nav`
 
 const NavLink = styled.a`
   text-decoration: none;
-  color: ${COLORS.gray['900']};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--color-gray-900);
+  font-weight: var(--weight-medium);
   font-size: 0.875rem;
   text-transform: uppercase;
 
   &:first-child {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;

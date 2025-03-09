@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLORS, WEIGHTS } from '../../constants';
 import Select from '../Select/Select';
 import ShoeGrid from '../ShoeGrid/ShoeGrid';
 import { BREAKPOINTS } from '../../breakpoints';
@@ -43,7 +42,7 @@ const BCWrapper = styled.article`
   @media (max-width: ${BREAKPOINTS.tablet}rem) {
     display: block;
     font-size: 0.875rem;
-    color: ${COLORS.gray['700']};
+    color: var(--color-gray-700);
   }
 `;
 
@@ -55,6 +54,6 @@ const Topbar = styled.article`
 
 const Text = styled.p`
   font-size: 1.25rem;
-  font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray['900']};
+  font-weight: var(--weight-medium);
+  color: var(--color-gray-900);
 `;

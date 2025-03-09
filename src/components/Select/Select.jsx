@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS, WEIGHTS } from '../../constants';
 import { ChevronDown } from 'react-feather';
 import { BREAKPOINTS } from '../../breakpoints';
 
@@ -32,7 +31,7 @@ const Wrapper = styled.label`
 `;
 
 const VisibleLabel = styled.span`
-  color: ${COLORS.gray[500]};
+  color: var(--color-gray-500);
   margin-right: 16px;
 `;
 
@@ -56,10 +55,10 @@ const NativeSelect = styled.select`
 
 const DisplayedBit = styled.span`
   display: block;
-  background: ${COLORS.gray[100]};
+  background: var(--color-gray-100);
   font-size: 0.875rem;
-  font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray[900]};
+  font-weight: var(--weight-medium);
+  color: var(--color-gray-900);
   padding: 12px 36px 12px 12px;
   border-radius: 8px;
   pointer-events: none;
